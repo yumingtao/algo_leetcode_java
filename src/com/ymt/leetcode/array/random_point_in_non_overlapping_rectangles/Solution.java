@@ -1,5 +1,8 @@
 package com.ymt.leetcode.array.random_point_in_non_overlapping_rectangles;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 /**
  * @author yumingtao
  * @date 2021/9/23 20:16
@@ -25,6 +28,8 @@ public class Solution {
             pCount = width * height;
             pSum[i] = i == 0 ? pCount : pSum[i - 1] + pCount;
         }
+
+        Arrays.stream(pSum).boxed().collect(Collectors.toList());
     }
 
     public int[] pick() {
@@ -41,9 +46,10 @@ public class Solution {
         //找到的index为x所在矩形的下标值，计算x对应的坐标
         int width = rects[index][2] - rects[index][0] + 1;
 
-        //取矩形left中的点y=x-pSum[index - 1], 即x在索引为index的矩形中的相对位置，注意位置范围 [1, pCount]
-        //将线性的[1, pCount]按照列(width=x1-x0)转换乘二维,注意y要-1，才能保证二维数组下标从0开始
-        //注意pSum[left - 1] = pSum[left] - pCount，直接使用pSum[left - 1]可能下标越界
+        //取矩形index中的点y=x-pSum[index - 1], 即x在索引为index的矩形中的相对位置，注意x的范围 [1, pCount]
+        //将线性的[1, pCount]按照列(width=x1-x0)转换乘二维，注意x有可能是矩形index的第一个点
+        //注意y要-1，才能保证二维数组下标从0开始
+        //注意pSum[index - 1] = pSum[index] - pCount，直接使用pSum[index - 1]可能下标越界
         //所以可以使用当前前缀和减去当前矩形中点的个数来表示index-1的前缀和，pSum[index] - width * height
         //int height = rects[index][3] - rects[index][1] + 1;
         //int y = x - (pSum[index] - width * height);
@@ -57,6 +63,8 @@ public class Solution {
 
     /**
      * 二分查找
+     * 找到大于目标值的，最小的pSum的索引i，即x所在的矩形索引
+     * 找到i之后，使用x-pSum[i-1]可以得到x在矩形i中的相对位置
      *
      * @param target 目标值
      * @return 返回大于目标值最小的前缀和的索引
