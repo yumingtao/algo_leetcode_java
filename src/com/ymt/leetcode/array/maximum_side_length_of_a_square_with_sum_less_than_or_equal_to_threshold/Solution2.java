@@ -10,12 +10,9 @@ package com.ymt.leetcode.array.maximum_side_length_of_a_square_with_sum_less_tha
  * @date 2021/10/13 17:20
  */
 public class Solution2 {
-    private int m;
-    private int n;
-
     public int maxSideLength(int[][] mat, int threshold) {
-        m = mat.length;
-        n = mat[0].length;
+        int m = mat.length;
+        int n = mat[0].length;
 
         //预处理矩阵前缀和
         //公式pSum(i,j)=pSum(i-1,j)+pSum(i,j-1)-pSum(i-1,j-1)+mat(i,j)
