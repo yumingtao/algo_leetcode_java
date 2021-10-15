@@ -20,7 +20,7 @@ public class Solution1 {
         int len = queries.length;
         int[] ans = new int[len];
         for (int i = 0; i < len; i++) {
-            //利用a^b^a=b的特性,区间XOR，subXOR=pXOR[i]-[j-1], j<=i
+            //利用a^b^a=b的特性,区间XOR，subXOR=pXOR[i]^pXOR[j-1], j<=i,表示[j,i]的区间和
             //注意queries中下标是从0～n-1，所以pXOR下标+1
             ans[i] = pXOR[queries[i][1] + 1] ^ pXOR[queries[i][0] + 1 - 1];
         }
