@@ -1,8 +1,6 @@
 package com.ymt.leetcode.array.minimum_value_to_get_positive_step_by_step_sum;
 
 /**
- * Description
- *
  * @author yumingtao
  * @date 2021/10/22 15:22
  */
