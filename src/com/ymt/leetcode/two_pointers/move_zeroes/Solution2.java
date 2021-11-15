@@ -1,4 +1,4 @@
-package com.ymt.leetcode.pre_sum.move_zeroes;
+package com.ymt.leetcode.two_pointers.move_zeroes;
 
 /**
  * @author yumingtao

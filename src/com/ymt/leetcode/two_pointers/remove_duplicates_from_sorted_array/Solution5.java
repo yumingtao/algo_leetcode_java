@@ -1,4 +1,4 @@
-package com.ymt.leetcode.pre_sum.remove_duplicates_from_sorted_array;
+package com.ymt.leetcode.two_pointers.remove_duplicates_from_sorted_array;
 
 /**
  * @author yumingtao
