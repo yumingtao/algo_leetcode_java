@@ -1,4 +1,4 @@
-package com.ymt.leetcode.double_pointer.remove_element;
+package com.ymt.leetcode.two_pointers.remove_element;
 
 /**
  * 思路：朴素解法

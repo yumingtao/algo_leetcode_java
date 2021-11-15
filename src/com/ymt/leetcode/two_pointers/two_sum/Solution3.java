@@ -1,4 +1,4 @@
-package com.ymt.leetcode.double_pointer.two_sum;
+package com.ymt.leetcode.two_pointers.two_sum;
 
 /**
  * 思路：暴力

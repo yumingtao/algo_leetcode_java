@@ -1,6 +1,5 @@
-package com.ymt.leetcode.double_pointer.three_sum_closest;
+package com.ymt.leetcode.two_pointers.three_sum_closest;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 

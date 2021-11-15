@@ -1,4 +1,4 @@
-package com.ymt.leetcode.double_pointer.container_with_most_water;
+package com.ymt.leetcode.two_pointers.container_with_most_water;
 
 /**
  * 思路:

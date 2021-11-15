@@ -1,4 +1,4 @@
-package com.ymt.leetcode.double_pointer.two_sum_ii_input_array_is_sorted;
+package com.ymt.leetcode.two_pointers.two_sum_ii_input_array_is_sorted;
 
 /**
  * 思路：暴力解法
