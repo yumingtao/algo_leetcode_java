@@ -13,9 +13,9 @@ public class Solution3 {
         int minLen = 1000000000;
         while (right < len) {
             sum += nums[right];
-            if (sum >= target) {
+            /*if (sum >= target) {
                 minLen = Math.min(minLen, right - left + 1);
-            }
+            }*/
             while (sum >= target) {
                 sum -= nums[left];
                 minLen = Math.min(minLen, right - left + 1);
