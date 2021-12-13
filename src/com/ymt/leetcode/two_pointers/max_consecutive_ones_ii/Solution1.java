@@ -31,6 +31,7 @@ public class Solution1 {
                         }
                     }
                     ++left;
+                    //zeroCount = 1;
                 }
             } else {
                 //right没有指向0->right-left+1
