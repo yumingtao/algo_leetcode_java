@@ -1,7 +1,7 @@
 package com.ymt.leetcode.two_pointers.max_consecutive_ones_iii;
 
 /**
- * 思路
+ * 思路: 滑动窗口
  *
  * @author yumingtao
  * @date 2021/12/13 10:16
