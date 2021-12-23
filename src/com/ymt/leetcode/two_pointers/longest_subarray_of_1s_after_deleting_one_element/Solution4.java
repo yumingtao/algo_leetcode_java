@@ -15,6 +15,10 @@ public class Solution4 {
         //正向循环预处理p
         p[0] = nums[0];
         for (int i = 1; i < len; ++i) {
+            /*可以这样理解：
+            * 1.如果第i个数是0，那么以0结尾的全为1的子数组长度为0
+            * 2.如果第i个数是1，那么以1结尾的全为1的子数组的长度为1+p[i-1]，不管p[i-1]是0还是有值
+            */
             p[i] = nums[i] == 0 ? 0 : p[i - 1] + 1;
         }
 
@@ -29,6 +33,8 @@ public class Solution4 {
         int maxLen = 0;
         //枚举删除的位置
         for (int i = 0; i < len; ++i) {
+            //假设第i个位置，i之前最长全是1的数组长度是p[i-1],i之后最长全是1的数组长度是s[i+1]
+            //注意下标i的范围不要越界
             int pLen = i == 0 ? 0 : p[i - 1];
             int sLen = i == len - 1 ? 0 : s[i + 1];
             maxLen = Math.max(maxLen, pLen + sLen);
