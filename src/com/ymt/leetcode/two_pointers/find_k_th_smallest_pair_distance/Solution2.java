@@ -23,7 +23,9 @@ public class Solution2 {
         }
 
         int max = nums[len - 1];
-        //此处为什么要用2倍？？？
+        //因为后边要用到nums[i]+mid,而mid最大值小于max - nums[0]
+        //所以此处应该是max+max-nums[0]，而0 <= nums[i],所以2*max可以
+        //int width = 2 * max - nums[0];
         int width = 2 * max;
         //prefix[i]表示数组nums中小于等于i的个数
         int[] prefix = new int[width];
@@ -38,13 +40,15 @@ public class Solution2 {
          * 对于固定的i，满足i<j，nums[j]-nums[i]<=mid的所有nums[j]的个数应该是
          * 1. nums[j]-nums[i]<=mid -> prefix[nums[i]+mid]-prefix[nums[i]]
          *    可以这样理解，[i,j]区间，如果两个边界之差<=mid，那么这个区间上任意一个nums[k]-nums[i]都是满足条件的，求有多少个这样的数
-         * 2. 由于排序后，相等的数是连续的，如果当前i有相同的数，需要知道i之后右边有多少个nums[i], 即count[i]-equalsCount[i]
-         *    而索引i在向后移动过程中，假设nums[i]=nums[i+1]=nums[i+n]，那么
-         *    count[i]-equalsCount[i] + count[i]-equalsCount[i+1] + ... + count[i]-equalsCount[i+n]
-         *    (n+1)count[i]-(equalsCount[i]+...+equalsCount[i+n])
-         *    (n+1)count[i]=(n+1)n
-         *    equalsCount[i]+...+equalsCount[i+n]=(n+i+1)n/2
-         *    (n+1)*n-(n+i+1)*n/2=n(n+1-i)/2
+         * 2. 由于排序后，相等的数是连续的，如果当前i有相同的数，需要知道i之后右边有多少个nums[i], 即count[i]-equalsCount[i]-1
+         *    假设nums[i]的个数是count，而索引i在向后移动过程中有
+         *    count-count[i]-1
+         * +  count-count[i+1]-1
+         * +  count-count[i+2]-1
+         * +  ......
+         * +  count-count[i+count-1]-1
+         *
+         * 反过来看，其实就是equalsCount[i]的和
          *
          */
         //二分查找
