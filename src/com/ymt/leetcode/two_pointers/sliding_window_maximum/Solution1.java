@@ -29,25 +29,25 @@ public class Solution1 {
             }
         });
         //先初始k大小的滑动窗口
-        for(int i = 0; i < k; ++i){
+        for (int i = 0; i < k; ++i) {
             queue.add(nodes[i]);
         }
         List<Integer> ans = new ArrayList<>();
-        ans.add(queue.peek().value);
 
         //向右滑动窗口
-        for(int i = k; i < len; ++i){
-            //删除左边界i-k对应的node
-            queue.remove(nodes[k - i]);
+        for (int i = k; i < len; ++i) {
+            Node top = queue.peek();
+            ans.add(top.value);
+            //删除左边届i-k对应的node
+            queue.remove(nodes[i - k]);
             //添加右边界i对应的node
             queue.add(nodes[i]);
             //此时的左右边界为[k-i+1, i],判断top的index是否在该范围，如果不在，移除
-            Node top = queue.peek();
-            if(top.index < k - i + 1){
+            if (top.index < k - i + 1) {
                 queue.remove(top);
             }
-            ans.add(queue.peek().value);
         }
+        ans.add(queue.peek().value);
         return ans.stream().mapToInt(Integer::valueOf).toArray();
     }
 
