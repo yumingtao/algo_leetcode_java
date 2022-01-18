@@ -12,20 +12,20 @@ public class Solution2 {
     public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {
         TreeSet<Long> treeSet = new TreeSet<>();
         for (int i = 0; i < nums.length; ++i) {
-            if (treeSet.size() <= k) {
-                //包含重复元素，直接返回true
-                if (treeSet.contains((long) nums[i])) {
-                    return true;
-                }
-                //找到treeSet中最小的数x，只要nums[i]-t<=x<=nums[i]+t即可
-                Long ceiling = treeSet.ceiling((long)nums[i] - t);
-                if ( ceiling != null && ceiling <= (long)nums[i] + t) {
-                    return true;
-                }
-            } else {
-                treeSet.remove((long)nums[i - k]);
+            //包含重复元素，直接返回true
+            if (treeSet.contains((long) nums[i])) {
+                return true;
+            }
+            //找到treeSet中最小的数x，只要nums[i]-t<=x<=nums[i]+t即可
+            Long ceiling = treeSet.ceiling((long) nums[i] - t);
+            if (ceiling != null && ceiling <= (long) nums[i] + t) {
+                return true;
             }
             treeSet.add((long) nums[i]);
+            //滑出左侧num
+            if (i >= k) {
+                treeSet.remove((long) nums[i - k]);
+            }
         }
         return false;
     }
