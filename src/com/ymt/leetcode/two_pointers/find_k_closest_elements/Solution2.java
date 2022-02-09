@@ -23,9 +23,9 @@ public class Solution2 {
             left = lowBound - k;
         } else {
             //lowBound-1是小于x的数中最大的一个数的索引, 判断lowBound和lowBound-1中离x最近的做为left和right
-            int closedIndex = lowBound > 0 && arr[lowBound] - x >= x - arr[lowBound - 1] ? lowBound - 1 : lowBound;
-            left = closedIndex;
-            right = closedIndex;
+            int closestIndex = lowBound > 0 && arr[lowBound] - x >= x - arr[lowBound - 1] ? lowBound - 1 : lowBound;
+            left = closestIndex;
+            right = closestIndex;
             while (right - left + 1 < k) {
                 if (left == 0) {
                     //如果left已经移到了数组头，或right在数组头，只向右移动right
