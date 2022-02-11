@@ -28,7 +28,7 @@ public class Solution2 {
             right = closestIndex;
             while (right - left + 1 < k) {
                 if (left == 0) {
-                    //如果left已经移到了数组头，或right在数组头，只向右移动right
+                    //如果left已经移到了数组头，只向右移动right
                     ++right;
                 } else if (right == arr.length - 1) {
                     //如果right已经移动到数组尾，只想左移动left
