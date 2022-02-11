@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
  * 思路：题解-直接使用Collections.sort()
  *
  * @author yumingtao
- * @date 2022/2/10 09:11…
+ * @date 2022/2/10 09:11
  */
 public class Solution3 {
     public List<Integer> findClosestElements(int[] arr, int k, int x) {
