@@ -6,7 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * 思路：
+ * 思路：数组排序+双指针
  *
  * @author yumingtao
  * @date 2022/2/11 15:11
@@ -42,7 +42,7 @@ public class Solution1 {
                 //有交叠的情况
                 //找到最晚的start
                 int maxStart = Math.max(slots1[index1][0], slots2[index2][0]);
-                //找到最晚的end
+                //找到最早的end
                 int minEnd = Math.min(slots1[index1][1], slots2[index2][1]);
                 //[maxStart, minEdn]就是交叠的时间区间
                 if(maxStart + duration <= minEnd){
