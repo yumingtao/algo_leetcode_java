@@ -20,7 +20,7 @@ public class Solution2 {
         for (int i = 0; i < list2.length; ++i) {
             if (map.containsKey(list2[i])) {
                 int sum = map.get(list2[i]) + i;
-                List<String> list = sumMap.getOrDefault(sum, new ArrayList<String>());
+                List<String> list = sumMap.getOrDefault(sum, new ArrayList<>());
                 list.add(list2[i]);
                 sumMap.put(sum, list);
             }
