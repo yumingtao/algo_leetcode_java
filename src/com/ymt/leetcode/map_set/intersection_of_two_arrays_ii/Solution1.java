@@ -3,9 +3,10 @@ package com.ymt.leetcode.map_set.intersection_of_two_arrays_ii;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
- * 思路:
+ * 思路:使用HashMap
  *
  * @author yumingtao
  * @date 2022/3/1 10:11
@@ -13,7 +14,7 @@ import java.util.List;
 public class Solution1 {
     public int[] intersect(int[] nums1, int[] nums2) {
         //先统计nums1中每个数字出现的次数
-        HashMap<Integer, Integer> map1 = new HashMap<>();
+        Map<Integer, Integer> map1 = new HashMap<>();
         for (int num : nums1) {
             map1.put(num, map1.getOrDefault(num, 0) + 1);
         }
