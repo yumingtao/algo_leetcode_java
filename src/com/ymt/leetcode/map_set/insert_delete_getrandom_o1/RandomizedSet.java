@@ -9,11 +9,13 @@ import java.util.*;
  */
 public class RandomizedSet {
     private Map<Integer, Integer> map;
-    List<Integer> data;
+    private List<Integer> data;
+    private Random random;
 
     public RandomizedSet() {
-        map = new HashMap<>();
-        data = new ArrayList<>();
+        this.map = new HashMap<>();
+        this.data = new ArrayList<>();
+        this.random = new Random();
     }
 
     public boolean insert(int val) {
@@ -30,11 +32,10 @@ public class RandomizedSet {
             return false;
         }
         if (data.size() > 1) {
-            //交换当前元素和链表尾部元素
+            //将链表尾部元素移动到当前元素位置
             int lastVal = data.get(data.size() - 1);
-            data.set(data.size() - 1, val);
             data.set(map.get(val), lastVal);
-            //更新尾部元素再map中的新索引
+            //更新尾部元素在map中的新索引
             map.put(lastVal, map.get(val));
         }
         //移除链表尾部元素
@@ -45,7 +46,6 @@ public class RandomizedSet {
     }
 
     public int getRandom() {
-        int randomIndex = new Random().nextInt(data.size());
-        return data.get(randomIndex);
+        return data.get(random.nextInt(data.size()));
     }
 }
