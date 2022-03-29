@@ -48,12 +48,8 @@ public class Solution1 {
                 --right;
             }
 
-            if (left == right) {
-                break;
-            }
-
-            if (left < right) {
-                //nums[left]>pivotValue,nums[right]<pivotValue,交换nums[left]和nums[right]
+            if (left <= right) {
+                //nums[left]>=pivotValue,nums[right]<=pivotValue,交换nums[left]和nums[right]
                 int temp = nums[right];
                 nums[right] = nums[left];
                 nums[left] = temp;
