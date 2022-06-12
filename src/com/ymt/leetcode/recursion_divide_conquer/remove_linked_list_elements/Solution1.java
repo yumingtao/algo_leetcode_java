@@ -1,4 +1,4 @@
-package com.ymt.leetcode.remove_linked_list_elements;
+package com.ymt.leetcode.recursion_divide_conquer.remove_linked_list_elements;
 
 /**
  * @Description 使用递归
