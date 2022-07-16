@@ -112,7 +112,7 @@ public class MyLinkedListTest {
 
         System.out.println("size:" + l.size);
         System.out.println(l.head.val);
-        MyLinkedList.Node node = l.head;
+        Node node = l.head;
         for (int i = 0; i < l.size; ++i) {
             System.out.println(node.val);
             node = node.next;

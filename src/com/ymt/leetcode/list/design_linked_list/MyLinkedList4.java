@@ -1,7 +1,7 @@
 package com.ymt.leetcode.list.design_linked_list;
 
 /**
- * @description
+ * @description 使用双链表
  * @author yumingtao
  * @date 2022-06-19 19:13
  */
