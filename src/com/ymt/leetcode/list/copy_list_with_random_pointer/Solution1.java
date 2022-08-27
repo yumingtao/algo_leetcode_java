@@ -19,7 +19,9 @@ public class Solution1 {
         if (!cachedNode.containsKey(head)) {
             Node newHead = new Node(head.val);
             cachedNode.put(head, newHead);
+            //递归处理复制节点的next
             newHead.next = copyRandomList(head.next);
+            //递归处理复制节点的random
             newHead.random = copyRandomList(head.random);
         }
         //如果当前节点的新节点已经创建，直接返回即可
