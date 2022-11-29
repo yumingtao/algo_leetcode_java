@@ -1,4 +1,4 @@
-package com.ymt.leetcode.delete_columns_to_make_sorted;
+package com.ymt.leetcode.string.delete_columns_to_make_sorted;
 
 /**
  * @description
