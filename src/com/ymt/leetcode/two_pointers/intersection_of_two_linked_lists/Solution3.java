@@ -1,8 +1,5 @@
 package com.ymt.leetcode.two_pointers.intersection_of_two_linked_lists;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * @Description 官方题解
  * @author yumingtao

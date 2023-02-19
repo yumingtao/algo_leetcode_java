@@ -1,7 +1,5 @@
 package com.ymt.leetcode.two_pointers.backspace_string_compare;
 
-import java.util.Stack;
-
 /**
  * 思路：直接使用StringBuilder
  *

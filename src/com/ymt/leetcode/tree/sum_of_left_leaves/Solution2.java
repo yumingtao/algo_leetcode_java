@@ -1,3 +1,5 @@
+import com.ymt.leetcode.tree.TreeNode;
+
 public class Solution2 {
     private int sum = 0;
     public int sumOfLeftLeaves(TreeNode root) {
