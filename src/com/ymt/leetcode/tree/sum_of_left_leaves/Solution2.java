@@ -1,3 +1,5 @@
+package com.ymt.leetcode.tree.sum_of_left_leaves;
+
 import com.ymt.leetcode.tree.TreeNode;
 
 public class Solution2 {
